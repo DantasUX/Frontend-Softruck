@@ -1,20 +1,16 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import { Course } from "../models/localizacoes.model";
 
 @Injectable({
   providedIn: "root",
 })
 export class RotasService {
-  private listaLocalizacoes: any[];
+  private url = "http://localhost:3000/courses";
+  constructor(private httpClient: HttpClient) {}
 
-  constructor() {
-    this.listaLocalizacoes = [
-      ["dshflkhfs", 1],
-      ["dshflkhfs", 2],
-      ["dshflkhfs", 3],
-    ];
-  }
-
-  get Localizacoes() {
-    return this.listaLocalizacoes;
+  todas(): Observable<any> {
+    return this.httpClient.get(this.url);
   }
 }

@@ -1,0 +1,19 @@
+<form class="bg" (ngSubmit)="numerodaplaca()">
+  <div>
+    <mat-form-field class="selecionar">
+      <mat-label>Escolha a Placa do veículo:</mat-label>
+      <mat-select matNativeControl required [(value)]="placa">
+        <mat-option
+          *ngFor="let localizacao of localizacoes"
+          [value]="localizacao.stop_points.crs.properties.name"
+        >
+          {{ localizacao.stop_points.crs.properties.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <button type="submit" class="btn" mat-raised-button color="primary">
+    OK
+  </button>
+</form>

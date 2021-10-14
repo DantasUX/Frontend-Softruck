@@ -1,0 +1,19 @@
+.bg {
+  background-color: rgb(44, 0, 26);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  box-shadow: 0 0 3em rgb(163, 163, 163);
+}
+.bg > div {
+  padding: 10px 20px 10px 20px;
+  margin: 10px 0px 10px 0px;
+}
+.btn {
+  height: 50px;
+  width: 100px;
+}
+.selecionar {
+  width: 300px;
+}

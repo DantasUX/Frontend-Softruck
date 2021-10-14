@@ -1,0 +1,10 @@
+<div class="mapa">
+  <div
+    id="map"
+    leaflet
+    (leafletMapReady)="onMapReady($event)"
+    [leafletOptions]="mapOptions"
+  ></div>
+
+  {{ pontos[1][1] }}
+</div>

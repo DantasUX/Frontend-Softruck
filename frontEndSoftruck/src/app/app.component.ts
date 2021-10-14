@@ -7,11 +7,11 @@ import { RotasService } from "./services/rotas.service";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
+  pontos!: String;
   title = "frontEndSoftruck";
-  constructor(private service: RotasService) {}
 
-  ngOnInit() {
-    console.log(this.service.Localizacoes);
-    console.log(this.service.Localizacoes[4]);
+  plotarRota($event: any) {
+    this.pontos = $event;
+    console.log(this.pontos);
   }
 }
