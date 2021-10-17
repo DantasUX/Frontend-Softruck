@@ -11,13 +11,12 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatButtonModule } from "@angular/material/button";
 
 import { HttpClientModule } from "@angular/common/http";
-import { MapComponent } from "./components/map/map.component";
 import { LeafletModule } from "@asymmetrik/ngx-leaflet";
 import { FormsModule } from "@angular/forms";
-import { FormularioComponent } from './components/formulario/formulario.component';
+import { FormularioComponent } from "./components/formulario/formulario.component";
 
 @NgModule({
-  declarations: [AppComponent, MapComponent, FormularioComponent],
+  declarations: [AppComponent, FormularioComponent],
   imports: [
     MatSliderModule,
     BrowserModule,

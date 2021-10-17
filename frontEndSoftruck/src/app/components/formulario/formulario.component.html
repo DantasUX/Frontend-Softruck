@@ -1,7 +1,8 @@
-<form class="bg" (ngSubmit)="numerodaplaca()">
+<!-- Aqi o suário deverá escolher a placa do veiculo que deseja ver a rota-->
+<form (ngSubmit)="numerodaplaca()">
   <div>
     <mat-form-field class="selecionar">
-      <mat-label>Escolha a Placa do veículo:</mat-label>
+      <mat-label>Escolha a Placa:</mat-label>
       <mat-select matNativeControl required [(value)]="placa">
         <mat-option
           *ngFor="let localizacao of localizacoes"
@@ -13,7 +14,19 @@
     </mat-form-field>
   </div>
 
-  <button type="submit" class="btn" mat-raised-button color="primary">
-    OK
-  </button>
+  <div>
+    <button type="submit" class="btn" mat-raised-button color="primary">
+      OK
+    </button>
+  </div>
 </form>
+
+<!-- Plocanto o Mapa da tela-->
+<div class="mapa">
+  <div
+    id="map"
+    leaflet
+    (leafletMapReady)="onMapReady($event)"
+    [leafletOptions]="mapOptions"
+  ></div>
+</div>
