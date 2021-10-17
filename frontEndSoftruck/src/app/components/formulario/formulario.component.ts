@@ -8,7 +8,7 @@ import {
   Polyline,
   Marker,
   Icon,
-  icon,
+  LayerGroup,
 } from "leaflet";
 
 @Component({
@@ -24,21 +24,23 @@ export class FormularioComponent implements OnInit {
   localizacoes: Array<any> = new Array();
   listaDePontos: Array<any> = new Array();
 
-  rota = new Polyline([[0, 0]], { color: "#7b1fa2" });
-  /**
-  chegada = new Marker([0, 0]);**/
-
-  greenIcon = new Icon({
-    iconUrl: "leaf-green.png",
-    shadowUrl: "leaf-shadow.png",
-
-    iconSize: [38, 95], // size of the icon
-    shadowSize: [50, 64], // size of the shadow
-    iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62], // the same for the shadow
-    popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
+  IconPartida = new Icon({
+    iconUrl: "assets/img/partida.png",
+    iconSize: [36, 58], // size of the icon
+    iconAnchor: [15, 54], // point of the icon which will correspond to marker's location
   });
-  partida = new Marker([-23.963214, -46.28054], { icon: this.greenIcon });
+
+  IconChegada = new Icon({
+    iconUrl: "assets/img/chegada.png",
+    iconSize: [36, 58], // size of the icon
+    iconAnchor: [20, 55], // point of the icon which will correspond to marker's location
+  });
+
+  rota = new Polyline([[0, 0]], { color: "#7b1fa2" });
+  partida = new Marker([0, 0], { icon: this.IconPartida });
+  chegada = new Marker([0, 0], { icon: this.IconChegada });
+
+  marcadores = new LayerGroup([this.partida, this.chegada]);
 
   constructor(private service: RotasService) {}
 
@@ -49,9 +51,9 @@ export class FormularioComponent implements OnInit {
 
   onMapReady(map: Map) {
     this.map = map;
-    this.addSampleMarker();
     this.rota.addTo(this.map);
     this.partida.addTo(this.map);
+    this.chegada.addTo(this.map);
   }
 
   numerodaplaca() {
@@ -63,19 +65,10 @@ export class FormularioComponent implements OnInit {
             this.localizacoes[i].gps[e].latitude,
             this.localizacoes[i].gps[e].longitude,
           ]);
-          /*
-            this.localizacoes[i].gps[e].longitude +
-              " , " +
-              ,*/
         }
       }
     }
     this.addSampleMarker();
-    console.log(this.listaDePontos);
-    console.log([
-      [122121, 12121],
-      [1, 1],
-    ]);
   }
 
   listarLocalizacoes() {
@@ -89,7 +82,7 @@ export class FormularioComponent implements OnInit {
     );
   }
 
-  private initializeMapOptions(/*ListaDeLocalizacao: number[]*/) {
+  private initializeMapOptions() {
     this.mapOptions = {
       center: latLng(-23.963214, -46.28054, 12),
       zoom: 13,
@@ -98,8 +91,6 @@ export class FormularioComponent implements OnInit {
           "https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png",
           {
             maxZoom: 20,
-            attribution:
-              '<a href="https://github.com/cyclosm/cyclosm-cartocss-style/releases" title="CyclOSM - Open Bicycle render">CyclOSM</a> | Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
           }
         ),
       ],
@@ -108,6 +99,7 @@ export class FormularioComponent implements OnInit {
 
   private addSampleMarker() {
     this.rota.setLatLngs(this.listaDePontos);
+    this.chegada.setLatLng(this.listaDePontos[this.listaDePontos.length - 1]);
     this.partida.setLatLng(this.listaDePontos[0]);
   }
 }
