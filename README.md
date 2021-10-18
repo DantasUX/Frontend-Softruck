@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 pu# FrontEndSoftruck
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.8.
@@ -25,3 +26,23 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+=======
+Usaremos o GitHub como repositorio
+
+- foi tilado o Json-Server para criar uma api rest, utilizando o jason fornecido pela Softruck
+
+- Usamos a lib Leaflet para criar e gerencial o mapas, rotas e marcadores. A biblioteca foi usada como um fabrica de objetos;
+
+- A aplicação terá apenas uma página que irá possuir um formulário, no qual o usuário deverá escolher a palca de um veiculo cadastrado;
+- Ao clicar no botão "Ok" será disparado um evento que irá plocar a rota que o veiculo escolhido deverá fazer.
+- Além dá rota será adicionado no mapa 2 icones sinalizando 2 pontos (chegada e partida);
+
+Iremos usar o Angula e Angular Material
+
+Como instalar:
+
+npm install
+json-server --watch db.json
+ng s
+
+>>>>>>> c7dd59b1cd11e36828b1fbb23254edbfc9967009
