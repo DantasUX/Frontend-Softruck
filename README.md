@@ -10,3 +10,9 @@ Usaremos o GitHub como repositorio
 
 Iremos usar o Angula e Angular Material
 
+Como instalar:
+
+npm install
+json-server --watch db.json
+ng s
+
