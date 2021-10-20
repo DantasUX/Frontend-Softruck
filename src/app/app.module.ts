@@ -14,9 +14,10 @@ import { HttpClientModule } from "@angular/common/http";
 import { LeafletModule } from "@asymmetrik/ngx-leaflet";
 import { FormsModule } from "@angular/forms";
 import { FormularioComponent } from "./components/formulario/formulario.component";
+import { MapComponent } from './components/map/map.component';
 
 @NgModule({
-  declarations: [AppComponent, FormularioComponent],
+  declarations: [AppComponent, FormularioComponent, MapComponent],
   imports: [
     MatSliderModule,
     BrowserModule,

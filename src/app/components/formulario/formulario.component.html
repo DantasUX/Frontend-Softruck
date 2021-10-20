@@ -1,5 +1,5 @@
-<!-- Aqi o suário deverá escolher a placa do veiculo que deseja ver a rota-->
-<form (ngSubmit)="numerodaplaca()">
+<!-- Aqui o suário deverá escolher a placa do veiculo que deseja ver a rota-->
+<form (ngSubmit)="escolherPlaca()">
   <div>
     <mat-form-field class="selecionar">
       <mat-label>Escolha a Placa:</mat-label>
@@ -20,13 +20,3 @@
     </button>
   </div>
 </form>
-
-<!-- Plocanto o Mapa da tela-->
-<div class="mapa">
-  <div
-    id="map"
-    leaflet
-    (leafletMapReady)="onMapReady($event)"
-    [leafletOptions]="mapOptions"
-  ></div>
-</div>

@@ -1,48 +1,31 @@
-<<<<<<< HEAD
-pu# FrontEndSoftruck
+# Front-End Softruck
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.8.
+## Descrição
 
-## Development server
+A aplicação, que possui apenas uma página, contem um imput onde o usuário deverá escolher a placa de um veiculo cdastrado, para saber sua rota. Ao clicar em "ok" será disparado um evento qe irá plotar a rota que o veiculo escolhido deverá fazer. Além da rota seá adicionado no mapa 2 ícones sinalizando 2 pontos (chegada e partida);
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Construído com
 
-## Code scaffolding
+- Typescript
+- Angular
+- Angular Material
+- Leaflet
+- Json Server
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Para Executar
 
-## Build
+Certifique-se de ter Node e o Git instalado localmente.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+> npm install
 
-## Running unit tests
+> json-server --watch db.json
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+> ng serve
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-=======
-Usaremos o GitHub como repositorio
+## Mais uma palavra
 
 - foi tilado o Json-Server para criar uma api rest, utilizando o jason fornecido pela Softruck
 
 - Usamos a lib Leaflet para criar e gerencial o mapas, rotas e marcadores. A biblioteca foi usada como um fabrica de objetos;
 
-- A aplicação terá apenas uma página que irá possuir um formulário, no qual o usuário deverá escolher a palca de um veiculo cadastrado;
-- Ao clicar no botão "Ok" será disparado um evento que irá plocar a rota que o veiculo escolhido deverá fazer.
-- Além dá rota será adicionado no mapa 2 icones sinalizando 2 pontos (chegada e partida);
-
-Iremos usar o Angula e Angular Material
-
-Como instalar:
-
-npm install
-json-server --watch db.json
-ng s
-
->>>>>>> c7dd59b1cd11e36828b1fbb23254edbfc9967009
+- Se você tiver alguma sugestão ou encontrou um bug, crie um problema. Solicitações pull são muito bem-vindas.
